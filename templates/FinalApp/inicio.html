@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block cambio %}
+    <div>
+    <form action="/app/buscar" method="GET">
+        {{ form.as_p }}
+        <input type="submit" value="Buscar">
+    </form>
+    </div>
+    {% for usuario in usuario %}
+        <h2>{{ usuario.nombre }}</h2>
+        <p class="lead mb-0">
+            El usuario es {{ usuario.nombre }}
+        <hr>
+    {% endfor %}
+
+{% endblock %}
